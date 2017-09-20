@@ -32,6 +32,7 @@ public class Main {
         trainCheck(file);
     }
 
+    //Using JAXB and Marshaller.
     public static void addTrainsToXML(Trains trains, File file) {
         try {
 
@@ -50,6 +51,7 @@ public class Main {
         }
     }
 
+    //Same, JAXB and Marshaller.
     public static void readTrainsFromXML(Trains trains, File file) {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Trains.class);
@@ -63,6 +65,7 @@ public class Main {
         }
     }
 
+    //Simple XML nodes parsing.
     public static void trainCheck(File file) throws ParseException {
         try {
             Document xmlDoc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
