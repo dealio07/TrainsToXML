@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Main {
@@ -22,11 +24,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         File file = new File("trains.xml");
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate localDate = LocalDate.now();
+
         Trains trains = new Trains();
-        trains.addTrain(new Train("Kyiv","Odessa","20.09.2017","12:00"));
-        trains.addTrain(new Train("Odessa","Kyiv","21.09.2017","16:00"));
+        trains.addTrain(new Train("Kyiv","Odessa",(dtf.format(localDate)),"12:00"));
+        trains.addTrain(new Train("Odessa","Kyiv",(dtf.format(localDate)),"16:00"));
 
         addTrainsToXML(trains, file);
+
         readTrainsFromXML(trains, file);
 
         trainCheck(file);
