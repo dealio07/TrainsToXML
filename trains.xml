@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:trains xmlns:ns2="train" xmlns:ns3="trains">
+    <ns2:trains>
+        <date>20.09.2017</date>
+        <departure>12:00</departure>
+        <from>Kyiv</from>
+        <to>Odessa</to>
+    </ns2:trains>
+    <ns2:trains>
+        <date>21.09.2017</date>
+        <departure>16:00</departure>
+        <from>Odessa</from>
+        <to>Kyiv</to>
+    </ns2:trains>
+</ns3:trains>
